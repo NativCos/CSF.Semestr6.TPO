@@ -6,9 +6,9 @@
 
 [Доска miro.com](https://miro.com/app/board/o9J_kvUMc2g=/)
 
-[ТЗ к проекту](https://raw.githubusercontent.com/nikdan36/projectTP/tree/write-T3/техническое_задание.docx)
+[ТЗ к проекту](https://github.com/nikdan36/projectTP/tree/write-T3/техническое_задание.docx)
 
-[Курсовой проект](https://raw.githubusercontent.com/nikdan36/projectTP/tree/write-T3/курсовой_проект.docx)
+[Курсовой проект](https://github.com/nikdan36/projectTP/tree/write-T3/курсовой_проект.docx)
 
 Участники:
 
