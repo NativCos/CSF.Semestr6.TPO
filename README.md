@@ -6,11 +6,13 @@
 
 [Доска miro.com](https://miro.com/app/board/o9J_kvUMc2g=/)
 
+[Структура сайта на Octopus.do](https://octopus.do/n279gj9bzs)
+
 [ТЗ к проекту](https://github.com/nikdan36/projectTP/tree/write-T3/техническое_задание.docx)
 
 [Курсовой проект](https://github.com/nikdan36/projectTP/tree/write-T3/курсовой_проект.docx)
 
-Участники:
+##Участники:
 
 - Стоян Никита patris.morson@gmail.com
-- Даньшин Никита 
+- Даньшин Никита nik.danshin.9936@gmail.com
