@@ -15,5 +15,5 @@
 ## Team:
 |Имя|Email|Роль|
 |-----|-----|-----|
-|Стоян Никита|patris.morson@gmail.com|Backend developer, PjM|
-|Даньшин Никита|nik.danshin.9936@gmail.com|Frontend developer, UI|
+|Стоян Никита|patris.morson@gmail.com|Backend developer, PjM, QA|
+|Даньшин Никита|nik.danshin.9936@gmail.com|Frontend developer, UI, QA|
