@@ -12,7 +12,7 @@
 
 [Курсовой проект](https://github.com/nikdan36/projectTP/tree/write-T3/курсовой_проект.docx)
 
-##Участники:
+## Участники:
 
 - Стоян Никита patris.morson@gmail.com
 - Даньшин Никита nik.danshin.9936@gmail.com
