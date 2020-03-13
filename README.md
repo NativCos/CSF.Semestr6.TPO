@@ -14,5 +14,5 @@
 
 ## Участники:
 
-- Стоян Никита patris.morson@gmail.com
-- Даньшин Никита nik.danshin.9936@gmail.com
+- Стоян Никита patris.morson@gmail.com -- Backend developer
+- Даньшин Никита nik.danshin.9936@gmail.com -- Frontend developer
