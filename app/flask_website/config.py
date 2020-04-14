@@ -10,6 +10,6 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'
     TEMPLATE_FOLDER = os.path.join(ROOT, 'templates')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SITEADMIN_NAME = root
-    SITEADMIN_PASSWORD = root
+    SITEADMIN_NAME = 'root'
+    SITEADMIN_PASSWORD = 'root'
     SALT = "abc"

@@ -1,6 +1,4 @@
 from flask_website import db
-from datetime import datetime
-from sqlalchemy import Column, Integer, DateTime
 
 
 class News(db.Model):
@@ -11,9 +9,7 @@ class News(db.Model):
     date = db.Column(db.DateTime, nullable=False)
     """Дата новости"""
     body = db.Column(db.String(10000), nullable=False)
-    """"""
-    author = db.relationship("Contentmaker", nullable=False)
-    """Автор новости"""
+    """текст новости"""
 
     def __repr__(self):
         return '<News {' + 'id=' + self.id + ',' + 'header=' + self.header + ',' + 'date=' + self.date + ',' + 'body=' + self.body + '}>'
