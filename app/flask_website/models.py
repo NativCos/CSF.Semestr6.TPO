@@ -15,20 +15,6 @@ class News(db.Model):
         return '<News {' + 'id=' + self.id + ',' + 'header=' + self.header + ',' + 'date=' + self.date + ',' + 'body=' + self.body + '}>'
 
 
-class Football_player(db.Model):
-    __tablename__ = 'football_player'
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(200), nullable=False)
-    """Имя игрока"""
-    citizenship = db.Column(db.String(200), nullable=False)
-    """Гражданство"""
-    team_position = db.Column(db.String(200), nullable=False)
-    """Позиция в команде"""
-
-    def __repr__(self):
-        return '<Football_player {' + 'id=' + self.id + ', ' + 'name=' + self.name + ', ' + 'citizenship=' + self.citizenship + ', ' + 'team_position=' + self.team_position + '}'
-
-
 class Game_match(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.DateTime, nullable=True)
@@ -48,7 +34,7 @@ class Game_match(db.Model):
 
 class Contentmaker(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(200), nullable=False, unique=True)
+    login = db.Column(db.String(200), nullable=False, unique=True)
     """Короткое имя"""
     date_of_creation = db.Column(db.DateTime, nullable=False)
     """Дата создания учетной записи контент мейкера"""
@@ -59,3 +45,23 @@ class Contentmaker(db.Model):
 
     def __repr__(self):
         return '<Contentmaker {' + 'id=' + self.id + ', '  'name=' + self.name + ', ' 'date_of_creation=' + self.date_of_creation + ', ' 'mail=' + self.mail + ', ' 'password=' + self.password + '}'
+
+
+class IClient(object):
+    def __init__(self):
+        pass
+
+
+class IContentmaker:
+    def __init__(self):
+        pass
+
+
+class Client(object):
+    def __init__(self):
+        pass
+
+
+class Admin(object):
+    def __init__(self):
+        pass
