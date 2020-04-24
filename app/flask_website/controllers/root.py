@@ -32,13 +32,13 @@ def team():
 
 @root_blueprints.route("/matches", methods=["GET"])
 def matches():
-    st = request.form['st']
+    st = request.args['st']
     return render_template("matches.html")
 
 
 @root_blueprints.route("/news", methods=["GET"])
 def news():
-    st = request.form['st']
+    st = request.args['st']
     return render_template("news.html")
 
 

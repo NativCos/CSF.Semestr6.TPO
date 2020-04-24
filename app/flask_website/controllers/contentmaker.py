@@ -14,7 +14,7 @@ def root():
 
 @contentmaker_blueprints.route("/news", methods=["GET"])
 def news():
-    st = request.form['st']
+    st = request.args['st']
     return render_template("news.html")
 
 
@@ -29,7 +29,7 @@ def editnewsget():
     return render_template("editnews.html")
 
 
-@contentmaker_blueprints.route("/news/<id>/edit", methods=["PUSH"])
+@contentmaker_blueprints.route("/news/<id>/edit", methods=["POST"])
 def editnewspush():
     header = request.form['header']
     body = request.form['body']
@@ -44,7 +44,7 @@ def delnews(id):
 
 @contentmaker_blueprints.route("/matches", methods=["GET"])
 def matches():
-    st = request.form['st']
+    st = request.args['st']
     return render_template("matches.html")
 
 
@@ -59,7 +59,7 @@ def editmatchesget():
     return render_template("editmatches.html")
 
 
-@contentmaker_blueprints.route("/matches/<id>/edit", methods=["PUSH"])
+@contentmaker_blueprints.route("/matches/<id>/edit", methods=["POST"])
 def editmatchespush():
     date = request.form['date']
     score_own = request.form['score_own']
@@ -79,7 +79,7 @@ def profileget(id):
     return render_template('profile.html')
 
 
-@contentmaker_blueprints.route("/profile", methods=["PUSH"])
+@contentmaker_blueprints.route("/profile", methods=["POST"])
 def profilepush():
     newpass = request.form['newpass']
     return redirect(url_for('/contentmaker/profile'))

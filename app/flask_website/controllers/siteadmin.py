@@ -17,7 +17,7 @@ def profile():
     return render_template('profile.html')
 
 
-@siteadmin_blueprints.route("/profile", methods=["PUSH"])
+@siteadmin_blueprints.route("/profile", methods=["POST"])
 def profilepush():
     newpass = request.form['newpass']
     return redirect(url_for('/siteadmin/profile'))
@@ -28,7 +28,7 @@ def contentmakermanagerget():
     return render_template('contentmakermanager.html')
 
 
-@siteadmin_blueprints.route("/contentmakermanager", methods=["PUSH"])
+@siteadmin_blueprints.route("/contentmakermanager", methods=["POST"])
 def contentmakermanagerpush():
     name = request.form['name']
     mail = request.form['mail']

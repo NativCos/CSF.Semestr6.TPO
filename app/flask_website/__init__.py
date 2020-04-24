@@ -9,7 +9,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__, instance_relative_config=True)
 db = SQLAlchemy(app)
 
-from flask_website.models import News, Contentmaker, Football_player, Game_match
+from flask_website.models import News, Contentmaker, Game_match
 
 
 def init_app(config_else: Config = None):
