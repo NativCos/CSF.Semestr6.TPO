@@ -12,7 +12,7 @@
 
 - [Курсовой проект .PDF](https://github.com/nikdan36/projectTP/tree/write-T3/курсовой_проект.docx)
 
-- [Отчет по ролям .PDF](https://github.com/nikdan36/projectTP/отчет_по_ролям.pdf)
+- [Отчет по ролям .PDF](https://github.com/nikdan36/projectTP/blob/master/%D0%BE%D1%82%D1%87%D0%B5%D1%82_%D0%BF%D0%BE_%D1%80%D0%BE%D0%BB%D1%8F%D0%BC.pdf)
 
 - [Интерфейс на Swagger](https://app.swaggerhub.com/apis/greek_patris/for_pt/1.0.0)
 
