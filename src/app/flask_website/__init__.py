@@ -88,7 +88,7 @@ def init_app(config_file=None):
     flask_website.app.config['PATH_TO_CONFIG_FILE'] = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'config.cfg')
     flask_website.app.config.from_pyfile(flask_website.app.config['PATH_TO_CONFIG_FILE'])
     if config_file is not None:
-        flask_website.app.config.from_object(config_file)
+        flask_website.app.config.from_pyfile(config_file)
         flask_website.app.config['PATH_TO_CONFIG_FILE'] = config_file
 
     flask_website.app.wsgi_app = PrefixMiddleware(flask_website.app.wsgi_app,
