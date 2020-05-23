@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="rgb-content-wrap">
+    <!--Blog Detail Page Start-->
+    <section class="team-alpha-listing-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    {% for thenews in micronews %}
+                    <!--Blog List Start-->
+                    <div class="rgb-blog blog-list">
+                        <!--Blog List Contant Start-->
+                        <div class="rgb-blog-contant">
+                            <!--Blog Title Start-->
+                            <h5 class="blog-title">
+                                <a href="/news/{{thenews['id']}}">{{thenews['header']}}</a>
+                            </h5>
+                            <!--Blog Title End-->
+                            <!--Blog Post Meta Start-->
+                            <div class="featured-post-meta blog-meta">
+                                <span class="blog-info post-date">
+                                    <i class="lnr lnr-calendar-full "></i>
+                                    <a href="#">{{thenews['date']}}</a>
+                                </span>
+                            </div>
+                            <!--Blog Post Meta End-->
+                            <p>{{thenews['micro_body']}}</p>
+                            <a href="/news/{{thenews['id']}}" class="btn-1 theme-background">Читать</a>
+                        </div>
+                        <!--Blog List Contant End-->                        
+                    </div>
+                    <!--Blog List End-->
+                    {% endfor %}
+                </div>
+                <!--Side Bar Wrap Start-->
+                <div class="col-md-4">
+                    <div class="kode-sidebar-element">
+                        {% include 'next_match_widgit.html' %}
+                    </div>
+                </div>
+                <!--Side Bar Wrap End-->
+            </div>
+        </div>
+    </section>
+    <!--Blog Detail Page End-->
+</div>
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="rgb-content-wrap">
+    <!--Blog Detail Page Start-->
+    <section class="team-alpha-listing-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <!--Section Title Start-->
+                    <h4 class="section-title border-top">
+                        <span class="rgb-label theme-background">
+                            <i class="lnr lnr-chart-bars"></i>
+                        </span>
+                        Результаты
+                    </h4>                    
+                    <!--Section Title End-->
+                    <div class="rgb-upcoming-fixture-wrap margin-bottom30">
+                        <!--Upcoming Fixture Start-->
+                        <table class="rgb-table-3 text-center">
+                            <tbody>
+                                <tr class="table-head darkgray-bg-head">
+                                    <th class="tb-date">
+                                        <span>Дата</span>
+                                    </th>
+                                    <th class="tb-theam">
+                                        <span>Комманды</span>
+                                    </th>
+                                    <th class="tb-venue">
+                                        <span>Место встречи</span>
+                                    </th>
+                                    <th class="tb-score">
+                                        <span>Счет</span>
+                                    </th>
+                                </tr>
+                                {% for thematch in matchs%}
+                                <tr>
+                                    <td class="tb-date">
+                                        <p>{{thematch.date}}</p>
+                                    </td>
+                                    <td class="tb-theam">
+                                        <!--Table Team opponanet Start-->
+                                        <div class="tb-opponanet-contant">
+                                            <!--Team 1 Start-->
+                                            <div class="tb-team-1">
+                                                <div class="text">
+                                                    <h6><a href="#">ЦСКА</a></h6>
+                                                </div>
+                                            </div>
+                                            <!--Team 1 End-->
+                                            <div class="tb-opponanet">
+                                                <h6 style="font-size: 13px;">Против</h6>
+                                            </div>
+                                            <!--Team 2 Start-->
+                                            <div class="tb-team-2">
+                                                <div class="text">
+                                                    <h6><a href="#">{{thematch.rival}}</a></h6>
+                                                </div>
+                                            </div>
+                                            <!--Team 1 End-->
+                                        </div>
+                                        <!--Table Team opponanet End-->
+                                    </td>
+                                    <td class="tb-venue">
+                                        <p>{{thematch.place_of_play}}</p>
+                                    </td>
+                                    <td class="tb-time">
+                                        <p>{{thematch.score_own}} - {{thematch.score_rival}}</p>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <!--Upcoming Fixture End-->
+                    </div>
+                </div>
+                <!--Side Bar Wrap Start-->
+                <div class="col-md-4">
+                    <div class="kode-sidebar-element">
+                        {% include 'next_match_widgit.html' %}
+                    </div>
+                </div>
+                <!--Side Bar Wrap End-->
+            </div>
+        </div>
+    </section>
+    <!--Blog Detail Page End-->
+</div>
+{% endblock %}

@@ -1,0 +1,272 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="rgb-content-wrap">
+    <!--Fixture Slider Wrap Start-->
+    <div class="rgb-fixtures-slider-wrap">
+        <!--Fixture Slider Start-->
+        <div class="fixtures-slider slick-initialized slick-slider slick-dotted" role="toolbar">
+            <div aria-live="polite" class="slick-list draggable">
+                <div class="slick-track" style="opacity: 1; width: 4950px; transform: translate3d(-1320px, 0px, 0px);"
+                    role="listbox">
+                    <div class="slick-slide slick-current slick-active" style="width: 330px;" tabindex="-1"
+                        role="option" aria-describedby="slick-slide40" data-slick-index="0" aria-hidden="false">
+                        <!--Fixture Contant Start-->
+                        <div class="rgb-fixtures-contant border-top">
+                            <div class="text">
+                                <!--Team 1 Start-->
+                                <div class="rgb-team-1 pull-left">
+                                    <div class="team-meta-logo rgb-shadow">
+                                        <img src="images/team-logo1.png" alt="">
+                                    </div>
+                                </div>
+                                <!--Team 1 End-->
+                                <h5 class="rgb-opponanet">VS</h5>
+                                <!--Team 2 Start-->
+                                <div class="rgb-team-1 pull-right">
+                                    <div class="team-meta-logo rgb-shadow">
+                                        <img src="images/team-logo2.png" alt="">
+                                    </div>
+                                </div>
+                                <!--Team 1 End-->
+                            </div>
+                            <h5 class="rgb-fixtures-date">
+                                Today, 22hrs to go
+                            </h5>
+                        </div>
+                        <!--Fixture Contant End-->
+                    </div>
+                    <div class="slick-slide slick-active" style="width: 330px;" tabindex="-1" role="option"
+                        aria-describedby="slick-slide41" data-slick-index="1" aria-hidden="false">
+                        <!--Fixture Contant Start-->
+                        <div class="rgb-fixtures-contant border-top">
+                            <div class="text">
+                                <!--Team 1 Start-->
+                                <div class="rgb-team-1 pull-left">
+                                    <div class="team-meta-logo rgb-shadow">
+                                        <img src="images/team-logo3.png" alt="">
+                                    </div>
+                                </div>
+                                <!--Team 1 End-->
+                                <h5 class="rgb-opponanet">VS</h5>
+                                <!--Team 2 Start-->
+                                <div class="rgb-team-1 pull-right">
+                                    <div class="team-meta-logo rgb-shadow">
+                                        <img src="images/team-logo4.png" alt="">
+                                    </div>
+                                </div>
+                                <!--Team 1 End-->
+                            </div>
+                            <h5 class="rgb-fixtures-date">
+                                Today, 22hrs to go
+                            </h5>
+                        </div>
+                        <!--Fixture Contant End-->
+                    </div>
+                    <div class="slick-slide slick-active" style="width: 330px;" tabindex="-1" role="option"
+                        aria-describedby="slick-slide42" data-slick-index="2" aria-hidden="false">
+                        <!--Fixture Contant Start-->
+                        <div class="rgb-fixtures-contant border-top">
+                            <div class="text">
+                                <!--Team 1 Start-->
+                                <div class="rgb-team-1 pull-left">
+                                    <div class="team-meta-logo rgb-shadow">
+                                        <img src="images/team-logo5.png" alt="">
+                                    </div>
+                                </div>
+                                <!--Team 1 End-->
+                                <h5 class="rgb-opponanet">VS</h5>
+                                <!--Team 2 Start-->
+                                <div class="rgb-team-1 pull-right">
+                                    <div class="team-meta-logo rgb-shadow">
+                                        <img src="images/team-logo6.png" alt="">
+                                    </div>
+                                </div>
+                                <!--Team 1 End-->
+                            </div>
+                            <h5 class="rgb-fixtures-date">
+                                Today, 22hrs to go
+                            </h5>
+                        </div>
+                        <!--Fixture Contant End-->
+                    </div>
+                    <div class="slick-slide slick-active" style="width: 330px;" tabindex="-1" role="option"
+                        aria-describedby="slick-slide43" data-slick-index="3" aria-hidden="false">
+                        <!--Fixture Contant Start-->
+                        <div class="rgb-fixtures-contant border-top">
+                            <div class="text">
+                                <!--Team 1 Start-->
+                                <div class="rgb-team-1 pull-left">
+                                    <div class="team-meta-logo rgb-shadow">
+                                        <img src="images/team-logo7.png" alt="">
+                                    </div>
+                                </div>
+                                <!--Team 1 End-->
+                                <h5 class="rgb-opponanet">VS</h5>
+                                <!--Team 2 Start-->
+                                <div class="rgb-team-1 pull-right">
+                                    <div class="team-meta-logo rgb-shadow">
+                                        <img src="images/team-logo8.png" alt="">
+                                    </div>
+                                </div>
+                                <!--Team 1 End-->
+                            </div>
+                            <h5 class="rgb-fixtures-date">
+                                Today, 22hrs to go
+                            </h5>
+                        </div>
+                        <!--Fixture Contant End-->
+                    </div>
+                    <!--start vis-->
+                    <div class="slick-slide" style="width: 330px;" tabindex="-1" role="option"
+                        aria-describedby="slick-slide44" data-slick-index="4" aria-hidden="true">
+                        <!--Fixture Contant Start-->
+                        <div class="rgb-fixtures-contant border-top">
+                            <div class="text">
+                                <!--Team 1 Start-->
+                                <div class="rgb-team-1 pull-left">
+                                    <div class="team-meta-logo rgb-shadow">
+                                        <h4>ЦСКА</h4>
+                                        <h4>{{lastgames[0].score_own}}</h4>
+                                    </div>
+                                </div>
+                                <!--Team 1 End-->
+                                <h5 class="rgb-opponanet">Против</h5>
+                                <!--Team 2 Start-->
+                                <div class="rgb-team-1 pull-right">
+                                    <div class="team-meta-logo rgb-shadow">
+                                        <h4>{{lastgames[0].rival}}</h4>
+                                        <h4>{{lastgames[0].score_rival}}</h4>
+                                    </div>
+                                </div>
+                                <!--Team 1 End-->
+                            </div>
+                            <h5 class="rgb-fixtures-date">
+                                {{lastgames[0].date}}
+                            </h5>
+                        </div>
+                        <!--Fixture Contant End-->
+                    </div>
+                    <div class="slick-slide" style="width: 330px;" tabindex="-1" role="option"
+                        aria-describedby="slick-slide45" data-slick-index="5" aria-hidden="true">
+                        <!--Fixture Contant Start-->
+                        <div class="rgb-fixtures-contant border-top">
+                            <div class="text">
+                                <!--Team 1 Start-->
+                                <div class="rgb-team-1 pull-left">
+                                    <div class="team-meta-logo rgb-shadow">
+                                        <h4>ЦСКА</h4>
+                                        <h4>{{lastgames[1].score_own}}</h4>
+                                    </div>
+                                </div>
+                                <!--Team 1 End-->
+                                <h5 class="rgb-opponanet">Против</h5>
+                                <!--Team 2 Start-->
+                                <div class="rgb-team-1 pull-right">
+                                    <div class="team-meta-logo rgb-shadow">
+                                        <h4>{{lastgames[1].rival}}</h4>
+                                        <h4>{{lastgames[1].score_rival}}</h4>
+                                    </div>
+                                </div>
+                                <!--Team 1 End-->
+                            </div>
+                            <h5 class="rgb-fixtures-date">
+                                {{lastgames[1].date}}
+                            </h5>
+                        </div>
+                        <!--Fixture Contant End-->
+                    </div>
+                    <div class="slick-slide" style="width: 330px;" tabindex="-1" role="option"
+                        aria-describedby="slick-slide46" data-slick-index="6" aria-hidden="true">
+                        <!--Fixture Contant Start-->
+                        <div class="rgb-fixtures-contant border-top">
+                            <div class="text">
+                                <!--Team 1 Start-->
+                                <div class="rgb-team-1 pull-left">
+                                    <div class="team-meta-logo rgb-shadow">
+                                        <h4>ЦСКА</h4>
+                                        <h4>{{lastgames[2].score_own}}</h4>
+                                    </div>
+                                </div>
+                                <!--Team 1 End-->
+                                <h5 class="rgb-opponanet">Против</h5>
+                                <!--Team 2 Start-->
+                                <div class="rgb-team-1 pull-right">
+                                    <div class="team-meta-logo rgb-shadow">
+                                        <h4>{{lastgames[2].rival}}</h4>
+                                        <h4>{{lastgames[2].score_rival}}</h4>
+                                    </div>
+                                </div>
+                                <!--Team 1 End-->
+                            </div>
+                            <h5 class="rgb-fixtures-date">
+                                {{lastgames[2].date}}
+                            </h5>
+                        </div>
+                        <!--Fixture Contant End-->
+                    </div>
+                    <!--end vis-->
+                </div>
+            </div>
+            <ul class="slick-dots" style="" role="tablist">
+                <li class="slick-active" aria-hidden="false" role="presentation" aria-selected="true"
+                    aria-controls="navigation40" id="slick-slide40"><button type="button" data-role="none" role="button"
+                        tabindex="0">1</button></li>
+                <li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation41"
+                    id="slick-slide41"><button type="button" data-role="none" role="button" tabindex="0">2</button>
+                </li>
+            </ul>
+        </div>
+        <!--Fixture Slider Start-->
+    </div>
+    <!--Fixture Slider Wrap End-->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <!--Section Title Start-->
+                    <h4 class="section-title border-top">
+                        <span class="rgb-label theme-background">
+                            <i class="lnr lnr-earth"></i>
+                        </span>
+                        Последнии новости
+                    </h4>
+                    <!--Section Title End-->
+                    <!--White Background Style Start-->
+                    <div class="rgb-white-style margin-bottom">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6" style="width: 100%;">
+                                <!--Text Wrap Start-->
+                                {% for thenews in micronews %}
+                                <div class="text-wrap">
+                                    <!--Featured Contant start-->
+                                    <div class="rgb-featured-contant">
+                                        <!--Featured Title start-->
+                                        <h6 class="featured-title"><a href="/news/{{ thenews['id'] }}">{{ thenews['header'] }}</a>
+                                        </h6>
+                                        <p>{{ thenews['micro_body'] }}</p>
+                                        <!--Featured Title End-->
+                                    </div>
+                                    <!--Featured Contant End-->
+                                </div>
+                                {% endfor %}
+                                <!--Text Wrap End-->                                
+                            </div>
+                        </div>
+                    </div>
+                    <!--White Background Style End-->
+                </div>
+                <!--Side Bar Wrap Start-->
+                <div class="col-md-4">
+                    <div class="kode-sidebar-element">
+                        {% include 'next_match_widgit.html' %}
+                    </div>
+                </div>
+                <!--Side Bar Wrap End-->
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock %}

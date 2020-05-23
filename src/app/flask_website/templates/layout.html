@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html class=" js no-touch cssanimations csstransitions" lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Home - Rugby Sports HTML Theme</title>
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <!-- Slick Slider CSS -->
+    <link href="/static/css/slick.css" rel="stylesheet">
+    <!-- DL Menu CSS -->
+    <link href="/static/css/component.css" rel="stylesheet">
+    <!-- ICONS CSS -->
+    <link href="/static/css/font-awesome.css" rel="stylesheet">
+    <link href="/static/css/linearicons.css" rel="stylesheet">
+    <!-- Typography CSS -->
+    <link href="/static/css/typography.css" rel="stylesheet">
+    <!-- Widget CSS -->
+    <link href="/static/css/widget.css" rel="stylesheet">
+    <!-- Shortcodes CSS -->
+    <link href="/static/css/shortcodes.css" rel="stylesheet">
+    <!-- Custom Main StyleSheet CSS -->
+    <link href="/static/css/style.css" rel="stylesheet">
+    <!-- Color CSS -->
+    <link href="/static/css/color.css" rel="stylesheet">
+    <!-- Responsive CSS -->
+    <link href="/static/css/responsive.css" rel="stylesheet">
+    <!-- Bootstrap icons CSS -->
+    <link href="/static/css/socialmediaicons.css" rel="stylesheet">
+</head>
+
+<body class="gray-background">
+    <!--kode Wrapper Start-->
+    <div class="rgb-wrapper">
+        <!--Header 2 Wrap Start-->
+        <header class="rgb-header theme-background">
+            <div class="container">
+                <!--Logo Wrap Start-->
+                <div class="logo">
+                    <a href="/"><img src="/static/img/logo.png" alt=""></a>
+                </div>
+                <!--Logo Wrap End-->
+                <!--Inner Header Wrap Start-->
+                <div class="rgb-inner-header">
+                    <!--Top Bar Wrap Start-->
+                    <div class="rgb-top-bar">
+
+                        <!--Top Bar Contact Start-->
+                        <div class="top-bar-contact">
+                            <span class="tp-contact"><i class="fa fa-phone"></i>Офис +7 (495) 646-88-88</span>
+                        </div>
+                        <!--Top Bar Contact End-->
+                        {% if social_liks_visible is not defined or social_liks_visible == True %}
+                        <!--Social Link Start-->
+                        <ul class="kode-social-link simple">
+                            <li><a href="https://www.facebook.com/PFCCSKAMOSCOW/"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="http://twitter.com/PFC_CSKA"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://www.instagram.com/pfc_cska/"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="http://www.youtube.com/user/PFCCSKA1911"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="http://vk.com/pfc_cska"><i class="fa fa-vk"></i></a></li>
+                        </ul>
+                        <!--Social Link End-->
+                        {% endif %}
+                    </div>
+                    <!--Top Bar Wrap End-->
+                    {% include 'navigation_wrap.html'%}
+                </div>
+                <!--Inner Header Wrap End-->
+            </div>
+        </header>
+        <!--Header 2 Wrap End-->
+
+        {% block content %}{% endblock %}
+
+        {% if footer_visible is not defined or footer_visible == True %}
+        <!--Footer Wrap Start-->
+        <footer class="rgb-footer rgb-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6" style="width: 100%;">
+                        <!--Widget Text Start-->
+                        <div class="widget widget-text">
+                            <h4 class="widget-title">О нас</h4>
+                            <div class="text">
+                                <p>ЦСКА — российский футбольный клуб из Москвы, в прошлом — часть Центрального спортивного клуба Армии. Один из старейших и самых титулованных клубов в постсоветской истории российского футбола, ведущий свою историю от команды ОЛЛС, основанной в 1911 году.</p>
+                            </div>
+                            <div class="rgb-ft-contact theme-border">
+                                <span>
+                                    <strong>Телефон</strong>
+                                    <em>+7 (495) 646-88-88</em>
+                                </span>
+                                <span>
+                                    <strong>Email</strong>
+                                    <em>office@pfc-cska.com</em>
+                                </span>
+                            </div>
+                        </div>
+                        <!--Widget Text End-->
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--Footer Wrap End-->
+        <!--Footer Social Start-->
+        <div class="rgb-social-wrap">
+            <ul class="kode-social-link">
+                <li><a href="https://www.facebook.com/PFCCSKAMOSCOW/"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="http://twitter.com/PFC_CSKA"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://www.instagram.com/pfc_cska/"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="http://www.youtube.com/user/PFCCSKA1911"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="http://vk.com/pfc_cska"><i class="fa fa-vk"></i></a></li>
+            </ul>
+        </div>
+        <!--Footer Social End-->
+        <!--Copy Right Start-->
+        <div class="rgb-copy-right">
+            <p>© 2020 - <a href="#">ЦСКА</a> - Professional Football Club CSKA Moscow.</p>
+        </div>
+        <!--Copy Right End-->
+        {% endif %}
+    </div>
+</body>
+</html>

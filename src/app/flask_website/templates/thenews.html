@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="rgb-content-wrap">
+    <!--Blog Detail Page Start-->
+    <section class="blog-detail-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <!--Blog List Start-->  
+                    <div class="rgb-blog blog-detail">
+                        <!--Blog List Contant Start-->
+                        <div class="rgb-blog-contant">                            
+                            <!--Blog Title Start-->
+                            <h5 class="blog-title"><a href="#">{{news.header}}</a></h5>
+                            <!--Blog Title End-->
+                            <!--Blog Post Meta Start-->
+                            <div class="featured-post-meta blog-meta">
+                                <span class="blog-info post-date">
+                                    <i class="lnr lnr-calendar-full "></i>
+                                    <a href="#">{{news.date}}</a>
+                                </span>
+                            </div>
+                            {{news.body}}
+                        </div>
+                        <!--Blog List Contant End-->
+                    </div>
+                    <!--Blog List End-->
+                </div>
+                <!--Side Bar Wrap Start-->
+                <div class="col-md-4">
+                    <div class="kode-sidebar-element">
+                        {% include 'next_match_widgit.html' %}
+                    </div>
+                    <!--Side Bar Wrap End-->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Blog Detail Page End-->
+</div>
+
+{% endblock %}

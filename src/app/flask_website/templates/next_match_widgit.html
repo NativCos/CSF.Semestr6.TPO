@@ -1,0 +1,40 @@
+{% if future_match is defined %}
+<!--Next Match Start-->
+<div class="widget widget-next-match">
+    <!--Section Title Start-->
+    <h4 class="section-title border-top">
+        <span class="rgb-label theme-background">
+            <i class="lnr lnr-hand"></i>
+        </span>
+        Следующий матч
+    </h4>
+    <!--Section Title End-->
+    <div class="rgb-white-style">
+        <!--Next Match Start-->
+        <div class="rgb-next-match">
+            <div class="opponanet-contant">
+                <!--Team 1 Start-->
+                <div class="rgb-team-1 pull-left">
+                    <div class="team-meta-logo rgb-shadow">
+                        <h5>ЦСКА</h5>
+                    </div>
+                </div>
+                <!--Team 1 End-->
+                <div class="rgb-opponanet">
+                    <span class="opponanet-style theme-background">Против</span>
+                    <p>{{future_match['date_place']}}</p>
+                </div>
+                <!--Team 2 Start-->
+                <div class="rgb-team-1 pull-right">
+                    <div class="team-meta-logo rgb-shadow">
+                        <h5>{{future_match['rival']}}</h5>
+                    </div>
+                </div>
+                <!--Team 1 End-->
+            </div>                                    
+        </div>
+        <!--Next Match End-->
+    </div>
+</div>
+<!--Next Match End-->
+{% endif %}
