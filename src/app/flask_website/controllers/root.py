@@ -18,23 +18,23 @@ root_blueprints = Blueprint('root', __name__, template_folder=app.config['TEMPLA
 def get_first_future_match():
     future_matches = db.session.query(Game_match).filter(Game_match.score_own == 999).order_by(Game_match.date)
     future_match = {}
-    future_match['rival'] = future_matches[0].rival
-    future_match['date_place'] = str(future_matches[0].date) + ' ' + future_matches[0].place_of_play
+    future_match['rival'] = future_matches.first().rival
+    future_match['date_place'] = str(future_matches[0].date.strftime('%c')) + ' ' + future_matches[0].place_of_play
     return future_match
 
 
 def get_micro_mews(limit: int = 3):
-    if (limit == 0):
-        news_raw = db.session.query(News).order_by(News.date)
+    if limit == 0:
+        news_raw = News.query.order_by(News.date).all()
     else:
-        news_raw = db.session.query(News).order_by(News.date).limit(limit)
+        news_raw = db.session.query(News).order_by(News.date).limit(limit).all()
     news = []
-    for i in range(limit):
-        news.append({})
-        news[i]['id'] = news_raw[0].id
-        news[i]['date'] = news_raw[0].date
-        news[i]['header'] = news_raw[0].header
-        news[i]['micro_body'] = news_raw[0].body[:100:]
+    for i in range(len(news_raw)):
+        news.append({
+        'id': news_raw[i].id,
+        'date': news_raw[i].date.strftime('%c'),
+        'header': news_raw[i].header,
+        'micro_body': news_raw[i].body[:100:]})
     return news
 
 
@@ -72,7 +72,7 @@ def matches():
 
 @root_blueprints.route("/news", methods=["GET"])
 def news():
-    return render_template("news.html", micronews=get_micro_mews(), future_match=get_first_future_match())
+    return render_template("news.html", micronews=get_micro_mews(0), future_match=get_first_future_match())
 
 @root_blueprints.route("/news/<int:id>", methods=["GET"])
 def thenews(id):
@@ -98,5 +98,5 @@ def loginpost():
 @root_blueprints.route("/logout", methods=["GET"])
 def logout():
     if logout_user():
-        return redirect('/')
+        return redirect('/login')
     return render_template('_500.html'), 500

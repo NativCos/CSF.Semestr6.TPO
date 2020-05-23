@@ -1,10 +1,113 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% set social_liks_visible=Flase %}
+{% set footer_visible=Flase %}
 
-</body>
-</html>
+{% extends "/layout.html" %}
+
+{% block content %}
+
+{% include '/siteadmin/extrnavigation.html' %}
+
+<div class="rgb-content-wrap">
+    <!--Blog Detail Page Start-->
+    <section class="blog-detail-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <!--Next Match Start-->
+                    <div class="rgb-large-fixture-wrap">
+                        <div class="rgb-white-style margin-bottom30">
+                            <h4 class="section-title border-top margin-0">
+                                <span class="rgb-label theme-background">
+                                    <i class="lnr lnr-pie-chart"></i>
+                                </span>
+                                Контент мейкеры с доступом к системе
+                            </h4>
+                            <!--Next Match Start-->
+                            <div class="rgb-next-match">
+                                <div class="opponanet-contant">
+                                    <ul class="rgb-table text-center rgb-table-2">
+                                        <li class="border-top-table">
+                                            <div class="tb-match-date">
+                                                <h6>Login</h6>
+                                            </div>
+                                            <div class="tb-match-time">
+                                                <h6>Почта</h6>
+                                            </div>
+                                            <div class="tb-matches-competition">
+                                                <h6>Пароль</h6>
+                                            </div>
+                                            <div class="tb-matches-season">
+                                                <h6>Дата создания</h6>
+                                            </div>
+                                            <div class="tb-matches-season">
+                                                <h6></h6>
+                                            </div>
+                                        </li>
+                                        {% for cm in contenmakers_list %}
+                                        <li>
+                                            <div class="tb-match-date">
+                                                <p style="text-transform: none;">{{cm.login}}</p>
+                                            </div>
+                                            <div class="tb-match-time">
+                                                <p style="text-transform: none;">{{cm.mail}}</p>
+                                            </div>
+                                            <div class="tb-matches-competition">
+                                                <p style="text-transform: none;">{{cm.password}}</p>
+                                            </div>
+                                            <div cla style="text-transform: none;"ss="tb-matches-season">
+                                                <p>{{cm.date_of_creation}}</p>
+                                            </div>
+                                            <div class="tb-matches-season">
+                                                <form method="POST">
+                                                    <input name="action" type="hidden" value="delete" >
+                                                    <input name="id" type="hidden" value="{{cm.id}}" >
+                                                    <input class="btn btn-danger" type="submit" value="Удалить навсегда">
+                                                </form>
+                                            </div>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                    </table>
+                                </div>
+                            </div>
+                            <!--Next Match End-->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="kode-sidebar-element">
+                        <!--Next Match Start-->
+                        <div class="widget widget-next-match">
+                            <!--Section Title Start-->
+                            <h4 class="section-title border-top">
+                                <span class="rgb-label theme-background">
+                                    <i class="lnr lnr-hand"></i>
+                                </span>
+                                Добавить контент мейкера
+                            </h4>
+                            <!--Section Title End-->
+                            <div class="rgb-white-style">
+                                <!--Next Match Start-->
+                                <div class="rgb-next-match">
+                                    <form style="margin-bottom: 50px;" method="POST" action="/siteadmin/contentmakermanagers">
+                                        <input name="action" type="hidden" value="create" >                                        
+                                        <div class="form-group">
+                                            <input name="login" type="login" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter login">
+                                          </div>  
+                                        <div class="form-group">
+                                          <input name="mail" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                        </div>                                 
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                      </form>
+                                </div>
+                                <!--Next Match End-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock %}

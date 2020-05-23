@@ -1,0 +1,60 @@
+<div class="rgb-content-wrap">
+    <!--Blog Detail Page Start-->
+    <section class="team-alpha-listing-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    {% for thenews in micronews %}
+                    <!--Blog List Start-->
+                    <div class="rgb-blog blog-list">
+                        <!--Blog List Contant Start-->
+                        <div class="rgb-blog-contant">
+                            <!--Blog Title Start-->
+                            <h5 class="blog-title">
+                                <a href="/news/{{thenews['id']}}">{{thenews['header']}}</a>
+                            </h5>
+                            <!--Blog Title End-->
+                            <!--Blog Post Meta Start-->
+                            <div class="featured-post-meta blog-meta">
+                                <span class="blog-info post-date">
+                                    <i class="lnr lnr-calendar-full "></i>
+                                    <a href="#">{{thenews['date']}}</a>
+                                </span>
+                            </div>
+                            <!--Blog Post Meta End-->
+                            <p>{{thenews['micro_body']}}</p>
+                            <a href="/news/{{thenews['id']}}" class="btn-1 theme-background"
+                                style="float: left;">Читать</a>
+                            <form action="/{{base_url_service}}/news" method="POST">
+                                <input type="hidden" name="action" value="delete">
+                                <input type="hidden" name="id" value="{{thenews['id']}}">
+                                <input class="btn-1 theme-background"
+                                    style="float: left; margin-left: 10px; background-color: red;" type="submit"
+                                    value="Удалить">
+                            </form>
+                        </div>
+                        <!--Blog List Contant End-->
+                    </div>
+                    <!--Blog List End-->
+                    {% endfor %}
+                </div>
+                <div class="col-md-4">
+                    <div class="kode-sidebar-element">
+                        <!--Next Match Start-->
+                        <div class="widget widget-next-match">
+                            <!--Section Title Start-->
+                            <h4 class="section-title border-top" style="font-size: 18px;">
+                                <span class="rgb-label theme-background">
+                                    <i class="lnr lnr-hand"></i>
+                                </span>
+                                <a href="/{{base_url_service}}/news/new">Добавить новую новость</a>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+</section>
+<!--Blog Detail Page End-->
+</div>

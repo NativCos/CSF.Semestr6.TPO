@@ -27,7 +27,7 @@ class FlaskUser(UserMixin):
     def get_id(self):
         return self.id_login
 
-    def get_control_object(self) -> object:
+    def get_control_object(self):
         return self.control_object
 
     @staticmethod

@@ -1,6 +1,3 @@
-{% extends "layout.html" %}
-
-{% block content %}
 <div class="rgb-content-wrap">
     <!--Blog Detail Page Start-->
     <section class="team-alpha-listing-page">
@@ -68,22 +65,38 @@
                                         <p>{{thematch.score_own}} - {{thematch.score_rival}}</p>
                                     </td>
                                 </tr>
+                                <tr class="rgb-tab-match-results">
+                                    <td colspan="6">
+                                            <a href="/{{base_url_service}}/matches/change?id={{thematch.id}}" class="btn btn-info" style="float: left; margin-left: 10px;">Изменить</a>
+                                            <form action="/{{base_url_service}}/matches" method="POST">
+                                                <input type="hidden" value="delete" name="action">
+                                                <input type="hidden" name="id" value="{{thematch.id}}">
+                                                <input type="submit" class="btn btn-danger" style="float: left; margin-left: 10px;"  value="Удалить">
+                                            </form>
+                                    </td>
+                                </tr>
                                 {% endfor %}
                             </tbody>
                         </table>
                         <!--Upcoming Fixture End-->
                     </div>
                 </div>
-                <!--Side Bar Wrap Start-->
                 <div class="col-md-4">
                     <div class="kode-sidebar-element">
-                        {% include 'next_match_widgit.html' %}
+                        <!--Next Match Start-->
+                        <div class="widget widget-next-match">
+                            <!--Section Title Start-->
+                            <h4 class="section-title border-top" style="font-size: 18px;">
+                                <span class="rgb-label theme-background">
+                                    <i class="lnr lnr-hand"></i>
+                                </span>
+                                <a href="/{{base_url_service}}/matches/new">Добавить новый матч новость</a>
+                            </h4>
+                        </div>
                     </div>
                 </div>
-                <!--Side Bar Wrap End-->
             </div>
         </div>
     </section>
     <!--Blog Detail Page End-->
 </div>
-{% endblock %}

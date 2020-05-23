@@ -1,0 +1,49 @@
+<div class="rgb-content-wrap">
+    <section>
+        <div class="container">
+            <div style="width: 80%; margin-left: auto; margin-right: auto; background-color: snow;">
+                <h4 class="section-title border-top">
+                    <span class="rgb-label theme-background">
+                        <i class="lnr lnr-chart-bars"></i>
+                    </span>
+                    Изменить матч
+                </h4>
+                <div style="padding-left: 50px;padding-top: 50px; padding-right: 50px; padding-bottom: 50px;">
+                    <form style="width: 50%;" action="/{{base_url_service}}/matches/new" method="POST">
+                        <input type="hidden" name="id" value="{{matche.id}}">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Имя соперника" name="rival"
+                                value="{{matche.rival}}">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Место проведения игры"
+                                name="place_of_play" value="{{matche.place_of_play}}">
+                        </div>
+                        <label>Дата игры</label>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="date" class="form-control" name="date"
+                                    value="{{matche.date.strftime('%Y-%m-%d')}}">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="time" class="form-control" name="time"
+                                    value="{{matche.date.strftime('%H:%M')}}">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="number" class="form-control" placeholder="Счет ЦСКА" name="score_own"
+                                    value="{{matche.score_own}}">
+                            </div>
+                            <div class=" form-group col-md-6">
+                                <input type="number" class="form-control" placeholder="Счет соперника"
+                                    name="score_rival" value="{{matche.score_rival}}">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

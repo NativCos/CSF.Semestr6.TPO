@@ -1,20 +1,18 @@
 {% set social_liks_visible=Flase %}
 {% set footer_visible=Flase %}
 
-{% extends "layout.html" %}
+{% extends "/layout.html" %}
 
 {% block content %}
 
-{% include 'contentmaker/extrnavigation.html' %}
+{% include '/siteadmin/extrnavigation.html' %}
 
 <div class="rgb-content-wrap">
     <section>
         <div class="container">
             <div style="width: 80%; margin-left: auto; margin-right: auto; background-color: snow;">
-                <h5 style="position: relative; margin-left: 10%; padding-top: 50px;">Login is {{contentmaker.login}}</h5>
-                <h5 style="position: relative; margin-left: 10%; padding-top: 50px;">Mail is {{contentmaker.mail}}</h5>
-                <h5 style="position: relative; margin-left: 10%; padding-top: 50px;">Дата начала работы {{contentmaker.date_of_creation}}</h5>
-                <form action="/contentmaker/profile" method="POST"
+                <h5 style="position: relative; margin-left: 10%; padding-top: 50px;">Login is {{login}}</h5>                
+                <form action="/siteadmin/profile" method="POST"
                     style="position: relative; margin-left: 10%; padding-top: 50px; padding-bottom: 50px; padding-right: 60%;">                    
                     <div class="form-group">
                         <label for="exampleInputPassword1">Смена пороля</label>

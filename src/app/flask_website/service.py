@@ -56,7 +56,7 @@ class IContentmakerService(object):
 
     @staticmethod
     def del_news(id: int) -> None:
-        nn = News()
+        nn = News.query.get(id)
         nn.id = id
         db.session.delete(nn)
         db.session.commit()
@@ -74,15 +74,14 @@ class IContentmakerService(object):
 
     @staticmethod
     def del_match(id: int) -> None:
-        n = Game_match()
+        n = Game_match.query.get(id)
         n.id = id
         db.session.delete(n)
         db.session.commit()
 
     @staticmethod
     def ch_match(id: int, date: datetime, score_own: int, score_rival: int, rival: str, place_of_play: str) -> None:
-        n = Game_match()
-        n.id = id
+        n = Game_match.query.get(id)
         n.date = date
         n.score_own = score_own
         n.score_rival = score_rival
@@ -102,7 +101,9 @@ class ContentmakerService(IContentmakerService, IClientService):
         return self.own_contentmaker
 
     def change_password(self, newpass: str) -> None:
-        db.update(Contentmaker).where(Contentmaker.id == self.own_contentmaker.id).values(password=newpass)
+        # db.update(Contentmaker).where(Contentmaker.id == self.own_contentmaker.id).values(password=newpass) # поч не работает
+        cm = db.session.query(Contentmaker).get(self.own_contentmaker.id)
+        cm.password = newpass
         db.session.commit()
 
 
@@ -127,8 +128,7 @@ class AdminService(IContentmakerService, IClientService):
         db.session.commit()
 
     def del_contentmaker(self, id: int) -> None:
-        cm = Contentmaker()
-        cm.id = id
+        cm = Contentmaker.query.get(id)
         db.session.delete(cm)
         db.session.commit()
 

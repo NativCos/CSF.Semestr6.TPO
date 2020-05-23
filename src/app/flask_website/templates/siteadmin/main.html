@@ -1,10 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% set social_liks_visible=Flase %}
+{% set footer_visible=Flase %}
 
-</body>
-</html>
+{% extends "/layout.html" %}
+
+{% block content %}
+<div class="rgb-navigation-wrap">
+    <div class="kode-navigation-wrapper">
+        <nav class="navigation">
+            <div class="menu-main-menu-container">
+                <ul>                    
+                    <li class="active"><a href="#" style="margin-left: 50px; letter-spacing: 0.6em;">Админ</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!--Responsive Menu END-->
+    </div>
+</div>
+<div class="rgb-content-wrap">
+    <section class="white-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <!--Section Title Start-->
+                    <h4 class="section-title gray border-top">
+                        <a href="/siteadmin/contentmakermanagers">Управление контент мейкерами</a>
+                    </h4>
+                    <!--Section Title End-->                    
+                </div>
+                <div class="col-md-6">
+                    <!--Section Title Start-->
+                    <h4 class="section-title gray border-top">
+                        <a href="/siteadmin/news">Новости</a>
+                    </h4>
+                    <!--Section Title End-->                    
+                </div>
+                <div class="col-md-6">
+                    <!--Section Title Start-->
+                    <h4 class="section-title gray border-top">
+                        <a href="/siteadmin/matches">Матчи</a>
+                    </h4>
+                    <!--Section Title End-->                    
+                </div>
+                <div class="col-md-6">
+                    <!--Section Title Start-->
+                    <h4 class="section-title gray border-top">
+                        <a href="/siteadmin/profile">Мой профиль</a>
+                    </h4>
+                    <!--Section Title End-->                    
+                </div>
+                <div class="col-md-6">
+                    <!--Section Title Start-->
+                    <h4 class="section-title gray border-top">
+                        <a href="/logout">LOGOUT</a>
+                    </h4>
+                    <!--Section Title End-->                    
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock %}

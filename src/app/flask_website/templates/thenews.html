@@ -19,7 +19,7 @@
                             <div class="featured-post-meta blog-meta">
                                 <span class="blog-info post-date">
                                     <i class="lnr lnr-calendar-full "></i>
-                                    <a href="#">{{news.date}}</a>
+                                    <a href="#">{{news.date.strftime('%c')}}</a>
                                 </span>
                             </div>
                             {{news.body}}
