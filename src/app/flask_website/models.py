@@ -88,7 +88,10 @@ class Admin(object):
         config_file = open(app.config['PATH_TO_CONFIG_FILE'], 'r')
         config_str = config_file.read()
         val = re.findall(r'SITEADMIN_PASSWORD = \'.*\'', config_str)
-        config_str = config_str.replace(val[0], 'SITEADMIN_PASSWORD = \'{}\''.format(newpassword))
+        if len(val) != 0:
+            config_str = config_str.replace(val[0], 'SITEADMIN_PASSWORD = \'{}\''.format(newpassword))
+        else:
+            config_str = config_str + ('\nSITEADMIN_PASSWORD = \'' + newpassword + '\'')
         config_file.close()
         config_file_w = open(app.config['PATH_TO_CONFIG_FILE'], 'w')
         config_file_w.write(config_str)
