@@ -67,7 +67,7 @@ def team():
 
 @root_blueprints.route("/matches", methods=["GET"])
 def matches():
-    matchs_raw = db.session.query(Game_match).filter(Game_match.score_own != 999).order_by(desc(Game_match.date))
+    matchs_raw = db.session.query(Game_match).order_by(desc(Game_match.date))
     return render_template("matches.html", matchs=matchs_raw, future_match=get_first_future_match())
 
 @root_blueprints.route("/news", methods=["GET"])

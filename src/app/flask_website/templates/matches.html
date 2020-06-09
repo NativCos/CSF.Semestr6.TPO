@@ -65,7 +65,12 @@
                                         <p>{{thematch.place_of_play}}</p>
                                     </td>
                                     <td class="tb-time">
+                                        {% if thematch.score_own != 999 %}
                                         <p>{{thematch.score_own}} - {{thematch.score_rival}}</p>
+                                        {% endif %}
+                                        {% if thematch.score_own == 999 %}
+                                        <p> - - </p>
+                                        {% endif %}
                                     </td>
                                 </tr>
                                 {% endfor %}
