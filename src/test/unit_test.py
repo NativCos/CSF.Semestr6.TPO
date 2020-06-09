@@ -28,6 +28,12 @@ class ContentmakerServiceTest(unittest.TestCase):
         ContentmakerService.add_new_match(datetime(2020,5,5), 4, 4, 'А это имя соперника',
                                                                 'А это имя того места где игра')
 
+    def test_del_match(self):
+        list = ContentmakerService.get_all_matches()
+        for l in list:
+            ContentmakerService.del_match(l.id)
+        assert ContentmakerService.get_all_matches().count != 0
+
 
 class AdminServiceTest(unittest.TestCase):
     """Тестирование администратора"""
