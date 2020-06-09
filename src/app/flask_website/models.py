@@ -3,6 +3,8 @@
 Содержит данные для работы сервисного слоя приложения, модели данных предметной области.
 Оборачивает операции создания и извлечения данных для сервисного уровня.
 """
+from flask import jsonify
+
 from flask_website import db
 from flask_website import app
 import re
@@ -24,6 +26,13 @@ class News(db.Model):
         return '<News (' + 'id=' + self.id + ',' + 'header=' + self.header + ',' + \
                'date=' + self.date + ',' + 'body=' + self.body + ')>'
 
+    def serialization(self):
+        return {"id": self.id,
+                "header": self.header,
+                "date": self.date,
+                "body": self.body
+                }
+
 
 class Game_match(db.Model):
     """Модель матч"""
@@ -44,6 +53,15 @@ class Game_match(db.Model):
         return '<Game_match (' + 'id=' + self.id + ', '  'date=' + self.date + ', ' 'score_own=' + \
                self.score_own + ', ' 'score_rival=' + self.score_rival + ', ' 'rival=' + \
                self.rival + ', ' 'place_of_play=' + self.place_of_play + ')>'
+
+    def serialization(self):
+        return {"id": self.id,
+                "score_own": self.score_own,
+                "date": self.date,
+                "score_rival": self.score_rival,
+                "rival": self.rival,
+                "place_of_play": self.place_of_play
+                }
 
 
 class Contentmaker(db.Model):
