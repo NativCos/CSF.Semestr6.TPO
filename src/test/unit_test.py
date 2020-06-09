@@ -1,5 +1,5 @@
 """
-Модуль тестирования UNIT
+Модуль UNIT тестирования
 """
 import unittest
 from flask_website import init_app
@@ -7,10 +7,6 @@ from flask_website.service import ClientService, ContentmakerService, AdminServi
 from datetime import datetime
 
 init_app()
-
-
-class Config:
-    URL = '127.0.0.1:8080/pt/'
 
 
 class ClientServiceTest(unittest.TestCase):

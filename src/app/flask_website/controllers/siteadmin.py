@@ -2,12 +2,15 @@
 Модуль администратора сайта
 """
 import os
+from datetime import datetime
+
 from flask import render_template, Blueprint, request, url_for, redirect
 from flask_login import current_user
 from flask_login.mixins import AnonymousUserMixin
 from flask_website import app, db
 from flask_website.auth_manager import UserRole, FlaskUser
-from flask_website.service import AdminService
+from flask_website.controllers.root import get_first_future_match, get_micro_mews
+from flask_website.service import AdminService, ContentmakerService
 
 siteadmin_blueprints = Blueprint(name='siteadmin', import_name=__name__, url_prefix='/siteadmin')
 
@@ -68,3 +71,107 @@ def contentmakermanagerpush():
         AdminService().del_contentmaker(int(id))
         return redirect('/siteadmin/contentmakermanagers')
     return render_template("_500.html"), 500
+
+@siteadmin_blueprints.route("/news", methods=["GET"])
+def news():
+    if _require_authorized() is not None:
+        return _require_authorized()
+    return render_template("siteadmin/news.html", micronews=get_micro_mews(0), future_match=get_first_future_match())
+
+
+@siteadmin_blueprints.route("/news/new", methods=["GET"])
+def getnewnewsform():
+    if _require_authorized() is not None:
+        return _require_authorized()
+    return render_template("siteadmin/createthenews.html")
+
+
+@siteadmin_blueprints.route("/news/new", methods=["POST"])
+def createnewspush():
+    if _require_authorized() is not None:
+        return _require_authorized()
+    header = request.form['header']
+    body = request.form['body']
+    date = request.form['date']
+    time = request.form['time']
+    ContentmakerService.add_new_news(header, body, datetime.strptime(date+'|'+ time, '%Y-%m-%d|%H:%M'))
+    return redirect('/siteadmin/news')
+
+
+@siteadmin_blueprints.route("/news", methods=["POST"])
+def delnews():
+    if _require_authorized() is not None:
+        return _require_authorized()
+    if request.form['action'] == 'delete':
+        id = request.form['id']
+        ContentmakerService.del_news(int(id))
+        return redirect('/siteadmin/news')
+    return redirect('/siteadmin/news')
+
+
+@siteadmin_blueprints.route("/matches", methods=["GET"])
+def matches():
+    if _require_authorized() is not None:
+        return _require_authorized()
+    response_list_matches = ContentmakerService.get_all_matches()
+    return render_template("siteadmin/matches.html", matchs=response_list_matches)
+
+
+@siteadmin_blueprints.route("/matches/new", methods=["GET"])
+def getnewmatchesform():
+    if _require_authorized() is not None:
+        return _require_authorized()
+    return render_template("siteadmin/createthematche.html")
+
+
+@siteadmin_blueprints.route("/matches/new", methods=["POST"])
+def newmatchespush():
+    if _require_authorized() is not None:
+        return _require_authorized()
+    date = request.form['date']
+    time = request.form['time']
+    score_own = request.form['score_own']
+    score_rival = request.form['score_rival']
+    rival = request.form['rival']
+    place_of_play = request.form['place_of_play']
+    ContentmakerService.add_new_match(datetime.strptime(date+'|'+time, '%Y-%m-%d|%H:%M'), int(score_own), int(score_rival), rival,
+                                      place_of_play)
+    return redirect('/siteadmin/matches')
+
+
+@siteadmin_blueprints.route("/matches/change", methods=["GET"])
+def geteditmatchesform():
+    if _require_authorized() is not None:
+        return _require_authorized()
+    id = request.args.get('id')
+    matche = ContentmakerService.get_thematch(int(id))
+    return render_template("siteadmin/editthematche.html", matche=matche)
+
+
+@siteadmin_blueprints.route("/matches/change", methods=["POST"])
+def editmatchespush():
+    if _require_authorized() is not None:
+        return _require_authorized()
+    id = request.form['id']
+    date = request.form['date']
+    time = request.form['time']
+    score_own = request.form['score_own']
+    score_rival = request.form['score_rival']
+    rival = request.form['rival']
+    place_of_play = request.form['place_of_play']
+    ContentmakerService.ch_match(int(id), datetime.strptime(date+'|'+time, '%Y-%m-%d|%H:%M'), int(score_own),
+                                 int(score_rival),
+                                 rival,
+                                 place_of_play)
+    return redirect('/siteadmin/matches')
+
+
+@siteadmin_blueprints.route("/matches", methods=["POST"])
+def delmatches():
+    if _require_authorized() is not None:
+        return _require_authorized()
+    if request.form['action'] == 'delete':
+        id = request.form['id']
+        ContentmakerService.del_match(int(id))
+        return redirect('/siteadmin/matches')
+    return redirect('/siteadmin/matches')
