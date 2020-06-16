@@ -16,6 +16,8 @@
 
 - [Интерфейс на Swagger](https://app.swaggerhub.com/apis/greek_patris/for_pt/1.0.0)
 
+- [Видео](https://drive.google.com/file/d/1iy8Y6LiDtCV4QTBnCpYApHE3VX11WU6J/view?usp=sharing)
+
 ## Team:
 |Имя|Email|Роль|
 |-----|-----|-----|
