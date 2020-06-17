@@ -18,6 +18,8 @@
 
 - [Видео](https://drive.google.com/file/d/1iy8Y6LiDtCV4QTBnCpYApHE3VX11WU6J/view?usp=sharing)
 
+- [Яндекс метрика](https://metrika.yandex.ru/dashboard?id=62202727)
+
 ## Team:
 |Имя|Email|Роль|
 |-----|-----|-----|
