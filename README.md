@@ -16,7 +16,9 @@
 
 - [Интерфейс на Swagger](https://app.swaggerhub.com/apis/greek_patris/for_pt/1.0.0)
 
-- [Видео](https://drive.google.com/file/d/1iy8Y6LiDtCV4QTBnCpYApHE3VX11WU6J/view?usp=sharing)
+- [Видео возможности](https://drive.google.com/file/d/1iy8Y6LiDtCV4QTBnCpYApHE3VX11WU6J/view?usp=sharing)
+
+- [ВИДЕО выступление с презентацией](https://drive.google.com/file/d/1vRYkoDWC-dIXxjYUt3wB7Lp7WgqRDd3f/view?usp=sharing)
 
 - [Яндекс метрика](https://metrika.yandex.ru/dashboard?id=62202727)
 
