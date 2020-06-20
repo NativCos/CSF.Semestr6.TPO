@@ -18,7 +18,7 @@
 
 - [Видео возможности](https://drive.google.com/file/d/1iy8Y6LiDtCV4QTBnCpYApHE3VX11WU6J/view?usp=sharing)
 
-- [ВИДЕО выступление с презентацией](https://drive.google.com/file/d/1rO16uec0hTcc_f2obWJEzcL5GyjnU9rK/view?usp=sharing)
+- [ВИДЕО выступление с презентацией](https://youtu.be/xnnsJRi4rOQ)
 
 - [Яндекс метрика](https://metrika.yandex.ru/dashboard?id=62202727)
 
